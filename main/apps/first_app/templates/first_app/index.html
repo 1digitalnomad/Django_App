@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>First_app Index</title>
+    {% load static %}
+    <!-- The line above tells Django to be ready to listen for static files -->
+    <link rel="stylesheet" href="{% static 'first_app/css/bootstrap.css' %}">
+    <!-- Put the static files in the static folder inside your app.  
+           Django collects files within all static folders and puts them within a single folder -->
+</head>
+<body>
+    <div class="container">
+    <h1>Hello this is the first_app index page.</h1>
+    <form action="/first_app/create" method="POST">
+        {% csrf_token %}
+        <label for="name">First app Name:</label>
+        <input type="text" id="name" name="name" placeholder="First App name">
+        <br>
+        <label for="desc">First App Description:</label>
+        <textarea id="desc" name="desc" placeholder="first app description"></textarea>
+        <br>
+        <input class="btn btn-primary" type="submit" value="Submit">
+    </form>
+    </div>
+</body>
+</html>

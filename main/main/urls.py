@@ -18,8 +18,9 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^', include('apps.first_app.urls')),
-    url(r'^second/', include('apps.second_app.urls')),
+    url(r'^first_app/', include('apps.first_app.urls')),
+    url(r'^second_app/', include('apps.second_app.urls')),
     url(r'^blogs/', include('apps.blogs.urls'))
 
 ]
+#always end with a trailing slash in the urls pattern.

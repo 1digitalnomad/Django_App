@@ -1,16 +1,23 @@
 from django.shortcuts import render, HttpResponse, redirect
 
-# Create your views here.
 def index(request):
-    response = 'Placeholder to later display all the list of blogs'
-    return HttpResponse(response)
+    return render(request,'blogs/index.html')
 
 def new(request):
     response = 'Placeholder to display a new form to create a new blog'
     return HttpResponse(response)
 
-def create(request):
-    return redirect('/')
+
+def create_blog(request):
+    if request.method == "POST":
+        print("*"*50)
+        print(request.POST)
+        print(request.POST['blog_name'])
+        print(request.POST['blog_desc'])
+        print("*"*50)
+        return redirect("/blogs")
+    else:
+        return redirect("/blogs")
 
 def show(request, number):
     response = 'Placeholder to display blog '
