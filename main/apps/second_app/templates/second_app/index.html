@@ -14,7 +14,7 @@
 <body>
     <div class="container">
         <h1>Hello this is the second_app index page.</h1>
-        <form action="second_app/create" method="POST">
+        <form action="/second_app/create/" method="POST">
             {% csrf_token %}
             <label for="name">second app Name:</label>
             <input type="text" id="name" name="second_app_name" placeholder="second App name">
